@@ -717,10 +717,6 @@
           <portSpacing port="sink_through 1" spacing="0"/>
         </process>
         <process expanded="true">
-          <operator activated="true" class="apply_model" compatibility="6.5.002" expanded="true" height="76" name="Apply Model (2)" width="90" x="112" y="120">
-            <list key="application_parameters"/>
-            <parameter key="create_view" value="false"/>
-          </operator>
           <operator activated="false" class="performance_classification" compatibility="6.5.002" expanded="true" height="76" name="Performance" width="90" x="246" y="165">
             <parameter key="main_criterion" value="first"/>
             <parameter key="accuracy" value="true"/>
@@ -748,6 +744,14 @@
             <parameter key="use_example_weights" value="true"/>
             <list key="class_weights"/>
           </operator>
+          <operator activated="true" class="multiply" compatibility="6.5.002" expanded="true" height="94" name="Multiply (2)" width="90" x="45" y="255"/>
+          <operator activated="true" class="apply_model" compatibility="6.5.002" expanded="true" height="76" name="Apply Model (2)" width="90" x="112" y="120">
+            <list key="application_parameters"/>
+            <parameter key="create_view" value="false"/>
+          </operator>
+          <operator activated="true" class="store" compatibility="6.5.002" expanded="true" height="60" name="Store" width="90" x="179" y="435">
+            <parameter key="repository_entry" value="../Results/prediction_model"/>
+          </operator>
           <operator activated="true" class="performance_binominal_classification" compatibility="6.5.002" expanded="true" height="76" name="Performance (2)" width="90" x="246" y="75">
             <parameter key="main_criterion" value="first"/>
             <parameter key="accuracy" value="true"/>
@@ -774,8 +778,10 @@
             <parameter key="skip_undefined_labels" value="true"/>
             <parameter key="use_example_weights" value="true"/>
           </operator>
-          <connect from_port="model" to_op="Apply Model (2)" to_port="model"/>
+          <connect from_port="model" to_op="Multiply (2)" to_port="input"/>
           <connect from_port="test set" to_op="Apply Model (2)" to_port="unlabelled data"/>
+          <connect from_op="Multiply (2)" from_port="output 1" to_op="Apply Model (2)" to_port="model"/>
+          <connect from_op="Multiply (2)" from_port="output 2" to_op="Store" to_port="input"/>
           <connect from_op="Apply Model (2)" from_port="labelled data" to_op="Performance (2)" to_port="labelled data"/>
           <connect from_op="Performance (2)" from_port="performance" to_port="averagable 1"/>
           <portSpacing port="source_model" spacing="0"/>
