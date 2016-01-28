@@ -448,7 +448,7 @@
           <operator activated="true" class="performance_binominal_classification" compatibility="6.5.002" expanded="true" height="76" name="Performance (2)" width="90" x="246" y="75">
             <parameter key="main_criterion" value="first"/>
             <parameter key="accuracy" value="true"/>
-            <parameter key="classification_error" value="false"/>
+            <parameter key="classification_error" value="true"/>
             <parameter key="kappa" value="false"/>
             <parameter key="AUC (optimistic)" value="false"/>
             <parameter key="AUC" value="false"/>
