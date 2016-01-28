@@ -418,37 +418,10 @@
             <list key="application_parameters"/>
             <parameter key="create_view" value="false"/>
           </operator>
-          <operator activated="false" class="performance_classification" compatibility="6.5.002" expanded="true" height="76" name="Performance" width="90" x="246" y="165">
+          <operator activated="true" class="performance_binominal_classification" compatibility="6.5.002" expanded="true" height="76" name="Performance (2)" width="90" x="179" y="300">
             <parameter key="main_criterion" value="first"/>
-            <parameter key="accuracy" value="true"/>
+            <parameter key="accuracy" value="false"/>
             <parameter key="classification_error" value="false"/>
-            <parameter key="kappa" value="false"/>
-            <parameter key="weighted_mean_recall" value="false"/>
-            <parameter key="weighted_mean_precision" value="false"/>
-            <parameter key="spearman_rho" value="false"/>
-            <parameter key="kendall_tau" value="false"/>
-            <parameter key="absolute_error" value="false"/>
-            <parameter key="relative_error" value="false"/>
-            <parameter key="relative_error_lenient" value="false"/>
-            <parameter key="relative_error_strict" value="false"/>
-            <parameter key="normalized_absolute_error" value="false"/>
-            <parameter key="root_mean_squared_error" value="false"/>
-            <parameter key="root_relative_squared_error" value="false"/>
-            <parameter key="squared_error" value="false"/>
-            <parameter key="correlation" value="false"/>
-            <parameter key="squared_correlation" value="false"/>
-            <parameter key="cross-entropy" value="false"/>
-            <parameter key="margin" value="false"/>
-            <parameter key="soft_margin_loss" value="false"/>
-            <parameter key="logistic_loss" value="false"/>
-            <parameter key="skip_undefined_labels" value="true"/>
-            <parameter key="use_example_weights" value="true"/>
-            <list key="class_weights"/>
-          </operator>
-          <operator activated="true" class="performance_binominal_classification" compatibility="6.5.002" expanded="true" height="76" name="Performance (2)" width="90" x="246" y="75">
-            <parameter key="main_criterion" value="first"/>
-            <parameter key="accuracy" value="true"/>
-            <parameter key="classification_error" value="true"/>
             <parameter key="kappa" value="false"/>
             <parameter key="AUC (optimistic)" value="false"/>
             <parameter key="AUC" value="false"/>
@@ -457,7 +430,7 @@
             <parameter key="recall" value="false"/>
             <parameter key="lift" value="false"/>
             <parameter key="fallout" value="false"/>
-            <parameter key="f_measure" value="false"/>
+            <parameter key="f_measure" value="true"/>
             <parameter key="false_positive" value="false"/>
             <parameter key="false_negative" value="false"/>
             <parameter key="true_positive" value="false"/>
